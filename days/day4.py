@@ -14,6 +14,7 @@ RULES = dict(
   pid=lambda v: len(v) == 9 and all(c in string.digits for c in v),
   cid=lambda _: True
 )
+
 REQD_FIELDS = set(RULES) - {"cid",}
 
 
@@ -29,15 +30,19 @@ def _passes_rules(record):
   return all(k in RULES and RULES[k](v) for k, v in record.items())
 
 
-def load_data():
-  return load_file_as_blocks("day4.txt")
-
-
-def part1(data):
+def count_records_with_required_fields(data):
   parsed = [_parse_block(b) for b in data]
   return sum(1 if _has_required_fields(d) else 0 for d in parsed)
 
 
-def part2(data):
+def count_fully_valid_records(data):
   parsed = [_parse_block(b) for b in data] 
   return sum(1 if _has_required_fields(d) and _passes_rules(d) else 0 for d in parsed)
+
+
+def load_data():
+  return load_file_as_blocks("day4.txt")
+
+
+part1 = count_records_with_required_fields
+part2 = count_fully_valid_records
