@@ -1,5 +1,5 @@
 import string
-from lib.loaders import load_file_as_blocks
+from lib.loaders import load_file_as_merged_blocks
 
 RULES = dict(
   byr=lambda v: len(v) == 4 and 1920 <= int(v) <= 2002,
@@ -41,7 +41,7 @@ def count_fully_valid_records(data):
 
 
 def load_data():
-  return load_file_as_blocks("day4.txt")
+  return load_file_as_merged_blocks("day4.txt")
 
 
 part1 = count_records_with_required_fields

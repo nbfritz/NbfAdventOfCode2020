@@ -1,7 +1,7 @@
-from lib.loaders import as_blocks
+from lib.loaders import as_merged_blocks
 import days.day4 as day
 
-DATA = as_blocks("""
+DATA = as_merged_blocks("""
 ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
 byr:1937 iyr:2017 cid:147 hgt:183cm
 
