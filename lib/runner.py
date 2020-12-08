@@ -24,7 +24,7 @@ def run_single_day(day_number):
     
 
 def test_single_day(day_number):
-  pytest.main([f"tests/days/test_day{day_number}.py"])
+  pytest.main([f"tests/test_day{day_number}.py"])
 
 
 def run_days(day_numbers):

@@ -16,13 +16,13 @@ FFFFBBBRLL
 
 
 def test_parse_pass_id():
-  assert day._parse_pass_id("BFFFBBFRRR") == (70, 7, 567)
-  assert day._parse_pass_id("FFFBBBFRRR") == (14, 7, 119)
-  assert day._parse_pass_id("BBFFBBFRLL") == (102, 4, 820)
+  assert day._parse_pass_id("BFFFBBFRRR") == 567
+  assert day._parse_pass_id("FFFBBBFRRR") == 119
+  assert day._parse_pass_id("BBFFBBFRLL") == 820
   
-  assert day._parse_pass_id("FFFFBBBRRR") == (7, 7, 63)
-  assert day._parse_pass_id("FFFFBBBRRL") == (7, 6, 62)
-  assert day._parse_pass_id("FFFFBBBRLL") == (7, 4, 60)
+  assert day._parse_pass_id("FFFFBBBRRR") == 63
+  assert day._parse_pass_id("FFFFBBBRRL") == 62
+  assert day._parse_pass_id("FFFFBBBRLL") == 60
 
 
 def test_find_highest_pass_id():
